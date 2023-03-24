@@ -30,6 +30,9 @@ class MainActivity : ComponentActivity() {
         // Clase Enum
         enumClasses()
 
+        // Clases anidadas(nested) y internas(inner)
+        nestedAndInnerClases()
+
     }
 
     // Lección 1 Kotlin Intermedio Enum Classes.
@@ -50,18 +53,39 @@ class MainActivity : ComponentActivity() {
 
     }
 
+    // Lección 1 kotlin intermedio: Clases de enumeracion.
     private fun enumClasses() {
 
         var userDirection: Direction? = null
         println("Dirección: $userDirection")
 
-        userDirection = Direction.SOUTH
+        userDirection = Direction.EAST
         println("Dirección: $userDirection")
 
+        // Propiedades por defecto.
         println("Propiedad name: ${userDirection.name}")
         println("Propiedad ordinal: ${userDirection.ordinal}")
 
+        // Metodos (funciones de la clase)
         println(userDirection.descripcion())
+
+        // Inicialización.
+        println(userDirection.dir)
+
+    }
+
+    // Lección 2 kotlin intermedio: Clases anidadas e internas.
+    private fun nestedAndInnerClases() {
+
+        // Clase anidada (nested)
+        val myNestedClass = MyNestedAndInnerClass.MyNestedClass()
+        val suma = myNestedClass.suma(5,5)
+        println("La suma es $suma")
+
+        // Clase interna (inner)
+        val myInnerClass: MyNestedAndInnerClass.MyInnerClass = MyNestedAndInnerClass().MyInnerClass()
+        val sumaDos : Int = myInnerClass.sumaDos(10)
+        println("El resultado de sumar dos es: $sumaDos")
 
     }
 
